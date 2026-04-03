@@ -1,6 +1,10 @@
 {
-  "name": "rspack-waite-page-plugin",
-  "version": "0.2.4",
+  "name": "rspack-dev-server-waitpage",
+  "author": "Sergey <ksv741@gmail.com> Krylov",
+  "version": "0.0.0",
+  "bugs": {
+    "url": "https://github.com/ksv741/rspack-dev-server-waitpage/issues"
+  },
   "description": "Shows a build progress page in the browser while rspack is compiling",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,12 +17,15 @@
   },
   "keywords": [
     "rspack",
-    "plugin",
+    "rspack-plugin",
     "dev-server",
+    "wait-page",
+    "waitpage",
     "progress",
-    "wait-page"
+    "progress-bar",
+    "build",
+    "webpack-dev-server-waitpage"
   ],
-  "author": "",
   "license": "ISC",
   "peerDependencies": {
     "@rspack/core": ">=0.7.0",
