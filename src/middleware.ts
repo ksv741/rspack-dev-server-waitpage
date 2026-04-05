@@ -6,6 +6,7 @@ export interface MiddlewareOptions {
   title: string;
   disableAfterFirstBuild: boolean;
   pollInterval: number;
+  theme: 'light' | 'dark';
 }
 
 type NextFunction = () => void;
@@ -63,6 +64,7 @@ export function createWaitPageMiddleware(
       moduleName: buildState.moduleName,
       pollInterval: options.pollInterval,
       progressEndpoint: PROGRESS_ENDPOINT,
+      theme: options.theme,
     });
 
     res.writeHead(200, {

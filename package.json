@@ -12,8 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "build": "tsc && node scripts/copy-templates.js"
   },
   "keywords": [
     "rspack",
@@ -34,7 +33,11 @@
   "devDependencies": {
     "@rspack/core": "^1.0.0",
     "@rspack/dev-server": "^1.0.0",
+    "@types/ejs": "^3.1.5",
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10"
   }
 }

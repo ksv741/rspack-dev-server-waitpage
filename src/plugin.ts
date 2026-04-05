@@ -17,6 +17,8 @@ export interface RspackWaitPagePluginOptions {
    * Lower values = smoother progress bar, slightly more requests. Default: 100
    */
   pollInterval?: number;
+  /** Visual theme of the wait page. Default: "dark" */
+  theme?: 'light' | 'dark';
 }
 
 const PLUGIN_NAME = 'RspackWaitPagePlugin';
@@ -31,6 +33,7 @@ export class RspackWaitPagePlugin {
       disableAfterFirstBuild: options.disableAfterFirstBuild ?? true,
       delay: options.delay ?? 0,
       pollInterval: options.pollInterval ?? 100,
+      theme: options.theme ?? 'dark',
     };
   }
 
@@ -100,6 +103,7 @@ export class RspackWaitPagePlugin {
         title: this.options.title,
         disableAfterFirstBuild: this.options.disableAfterFirstBuild,
         pollInterval: this.options.pollInterval,
+        theme: this.options.theme,
       });
 
       devServerOptions['setupMiddlewares'] = (

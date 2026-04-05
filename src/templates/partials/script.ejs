@@ -1,0 +1,45 @@
+  <script>
+    var fill    = document.getElementById('progress-fill');
+    var msg     = document.getElementById('progress-message');
+    var pct     = document.getElementById('progress-pct');
+    var current = document.getElementById('detail-current');
+
+    function setDetail(el, val) {
+      if (val) {
+        el.textContent = val;
+        el.classList.remove('is-empty');
+      } else {
+        el.textContent = '—';
+        el.classList.add('is-empty');
+      }
+    }
+
+    function formatDetail(s) {
+      if (!s) return '';
+      if (s.indexOf('/') === -1) return s; // phase label — show as-is
+      var parts = s.replace(/\\/g, '/').split('/');
+      return parts.length > 2 ? ('\u2026/' + parts.slice(-2).join('/')) : s;
+    }
+
+    fill.style.width = '<%- percentage %>%';
+
+    (function poll() {
+      fetch(<%- progressEndpointJson %>)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          fill.style.width = data.percentage + '%';
+          pct.textContent  = data.percentage + '%';
+          msg.textContent  = data.message || '';
+          setDetail(current, formatDetail(data.moduleName || ''));
+
+          if (!data.isBuilding) {
+            location.reload();
+          } else {
+            setTimeout(poll, <%- pollInterval %>);
+          }
+        })
+        .catch(function() {
+          setTimeout(poll, <%- pollInterval * 5 %>);
+        });
+    })();
+  </script>
