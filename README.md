@@ -1,6 +1,12 @@
 # rspack-dev-server-waitpage
 
+[![npm version](https://img.shields.io/npm/v/rspack-dev-server-waitpage.svg)](https://www.npmjs.com/package/rspack-dev-server-waitpage)
+[![npm downloads](https://img.shields.io/npm/dw/rspack-dev-server-waitpage.svg)](https://www.npmjs.com/package/rspack-dev-server-waitpage)
+[![license](https://img.shields.io/npm/l/rspack-dev-server-waitpage.svg)](./LICENSE)
+
 Shows a build progress page in the browser while rspack is compiling. Instead of a blank screen or an error, users see a progress bar with the current build status.
+
+![rspack-dev-server-waitpage preview](./docs/img/light.png)
 
 > **Rspack equivalent of [webpack-dev-server-waitpage](https://www.npmjs.com/package/webpack-dev-server-waitpage).**
 > The original package does not support rspack — this one does.

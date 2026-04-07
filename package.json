@@ -5,6 +5,11 @@
   "bugs": {
     "url": "https://github.com/ksv741/rspack-dev-server-waitpage/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ksv741/rspack-dev-server-waitpage.git"
+  },
+  "homepage": "https://github.com/ksv741/rspack-dev-server-waitpage#readme",
   "description": "Shows a build progress page in the browser while rspack is compiling",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +30,10 @@
     "build",
     "webpack-dev-server-waitpage"
   ],
-  "license": "ISC",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "peerDependencies": {
     "@rspack/core": ">=0.7.0",
     "@rspack/dev-server": ">=0.7.0"
